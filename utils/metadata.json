@@ -1,0 +1,16 @@
+{
+  "description": "This NFT proves I've created and deployed my first ERC20 smart contract on Goerli with Alchemy Road to Web3",
+  "external_url": "Alchemy.com/?a=roadtoweb3weekone",
+  "image": "https://ipfs.filebase.io/ipfs/QmS3Su7Qsj4poVLufTjfVjJKnpnjouxWRTp6EEQ6KWLuVt",
+  "name": "JENN-NFT",
+  "attributes": [
+    {
+      "trait_type": "beauty",
+      "value": 10
+    },
+    {
+      "trait_type": "Personality",
+      "value": "happy"
+    }
+  ]
+}
