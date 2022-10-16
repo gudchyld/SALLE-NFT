@@ -4,17 +4,31 @@ pragma solidity ^0.8.4;
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+//import "@openzeppelin/contracts/utils/Counters.sol";
 
 
 contract JennyNFT is ERC721, ERC721Enumerable, ERC721URIStorage {
+
+    //Counters.Counter private _tokenIdCounter;
+    uint currentSupply;
+    uint MAX_SUPPLY = 5;
+
     constructor() ERC721("JENNYM", "JM") {}
 
-    function safeMint(address to, uint256 tokenId, string memory uri)
+    function safeMint(address to, string memory uri)
         public
         
     {
+        require(currentSupply <= MAX_SUPPLY, "you can't mint more than the max");
+        uint tokenId = currentSupply;
+        incrementSupply();
+
         _safeMint(to, tokenId);
         _setTokenURI(tokenId, uri);
+    }
+
+    function incrementSupply() public{
+        currentSupply++;
     }
 
     // The following functions are overrides required by Solidity.
